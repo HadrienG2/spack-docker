@@ -38,5 +38,9 @@ RUN cd /opt && git clone https://github.com/spack/spack.git
 # Setup the environment for running Spack
 RUN echo "source /opt/spack/share/spack/setup-env.sh" >> "$SETUP_ENV"
 
+# Some build script such as tar's do not like Docker's habit of running
+# everything as root, and need a little convincing
+ENV FORCE_UNSAFE_CONFIGURE=1
+
 # Discard the system package cache to save up space
 RUN zypper clean
