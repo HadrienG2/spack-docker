@@ -1,5 +1,5 @@
 # Configure the container's basic properties
-FROM opensuse:tumbleweed
+FROM opensuse/tumbleweed
 LABEL Description="openSUSE Tumbleweed with Spack installed" Version="0.1"
 CMD bash
 SHELL ["/bin/bash", "-c"]
