@@ -26,8 +26,8 @@ WORKDIR /root
 RUN zypper ref && zypper dup -y
 
 # Install Spack's dependencies
-RUN zypper in -y curl gcc gcc-c++ gcc-fortran git make patch python python-xml \
-                 tar unzip xz
+RUN zypper in -y curl gcc gcc-c++ gcc-fortran git gzip make patch python       \
+                 python-xml tar unzip xz
 
 # Install an environment module system
 RUN zypper in -y lua-lmod                                                      \
